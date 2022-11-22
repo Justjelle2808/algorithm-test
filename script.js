@@ -74,7 +74,7 @@ function routeAlgorithm(){
   
   weight = 1;
   successorCurrentCost = 0;
-
+//test github
   // main program loop
   for(let i = 0; i < 2; i++){ //while(openRouteNodes != []){
 
