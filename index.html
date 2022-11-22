@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  
+  <script type="text/javascript" src="https://cs.nyu.edu/~kapp/cs101/processing_on_the_web/processing.js"></script>
+  <script src="script.js"></script>
+
+  <main>
+    <div id=canvas_holder>
+      
+      <canvas data-processing-sources="program_heat.pde"></canvas>
+      
+      <p id=canvas_subText> Heatmap </p>
+
+      <div id=buttonContainer>
+        <button id=algorithmButton onclick="routeAlgorithm()">Start route</button>
+      </div>  
+    </div>
+
+  </main>
+  
+
+</body>
+
+</html>
