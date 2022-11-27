@@ -1,5 +1,4 @@
 
-
 // function fro making a map list from a csv file
 function createMap(link){
 
@@ -74,22 +73,31 @@ function routeAlgorithm(){
   
   weight = 1;
   successorCurrentCost = 0;
-//test github
+  
   // main program loop
-  for(let i = 0; i < 2; i++){ //while(openRouteNodes != []){
+  for(let i = 0; i < 20; i++){ //while(openRouteNodes != []){
 
+
+    var nodeCurrent = [];
+    var nodeCurrentIndex = 0;
     //searches for the node in the open nodes with the lowest cost and sets that as the selected node
-    var nodeCurrent = 0;
-    // go through every node and select the index of the one with lowest cost
+    var cost = 0;
     for(let n = 0; n < openRouteNodes.length; n++){
-      
-      if(f(openRouteNodes[n][0], openRouteNodes[n][1]) < nodeCurrent){
-        
-        nodeCurrent = n;
+  
+      if(f(openRouteNodes[n][0], openRouteNodes[n][1]) < cost){
+        nodeCurrentIndex = n;
       }
+      cost = f(openRouteNodes[n][0], openRouteNodes[n][1]);
     }
+
+    
     // select the node with that index
-    nodeCurrent = openRouteNodes[nodeCurrent]
+    nodeCurrent = openRouteNodes[nodeCurrentIndex]
+
+    // if the found node is the goal, end the program
+    if(nodeCurrent[0] == goalX && nodeCurrent[1] == goalY){
+      break
+    }
 
 
     // if the found node is the goal, end the program
@@ -139,9 +147,10 @@ function routeAlgorithm(){
       }
       // if the node is nor in the open, nor in the closed nodes, push it into the open nodes.
       else{
-        openRouteNodes.push(successorNodeList[i])
+        openRouteNodes.push(successorNodeList[i]);
       }
     }
+    closedRouteNodes.push(nodeCurrent);
   }
 
 }

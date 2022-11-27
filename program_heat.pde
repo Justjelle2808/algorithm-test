@@ -62,9 +62,9 @@ void draw(){
 
 
   
-  for(int i = 1; i < openRouteNodes.length(); i++){
+  for(int i = 1; i < closedRouteNodes.length(); i++){
     fill(0, 0, 255);
-    rect(openRouteNodes[i][0] * squareWidth, openRouteNodes[i][1] * squareHeight, squareWidth, squareHeight);
+    rect(closedRouteNodes[i][0] * squareWidth, closedRouteNodes[i][1] * squareHeight, squareWidth, squareHeight);
   }
   
 }
